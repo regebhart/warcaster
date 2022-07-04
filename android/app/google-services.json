@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1069167150749",
+    "project_id": "warmahordes-6861a",
+    "storage_bucket": "warmahordes-6861a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069167150749:android:0d60f2ce1e21b6da3c7674",
+        "android_client_info": {
+          "package_name": "com.ryangebhart.warcaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069167150749-k9kn08ij5suu9s91va6shmp0s5746ht1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo-JuPyUgKqx4lZOMA8DJuhn8wMUqxS8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069167150749-k9kn08ij5suu9s91va6shmp0s5746ht1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
