@@ -1,0 +1,323 @@
+{
+  "game": [
+    {
+      "name": "Warmachine",
+      "faction": [
+        {
+          "name": "Cryx",
+          "warcaster": [
+            {
+              "name": "Bane Witch Agathia",
+              "title": "Cryx Warcaster",
+              "abilities": [
+                "Undead"
+              ],
+              "characterabilities": [
+                {
+                  "name": "Apparition",
+                  "description": "During your Control Phase, place this model anywhere completely within 2\" of its current location."
+                },
+                {
+                  "name": "Death Shroud",
+                  "description": "While within this model's command range, enemy models suffer -2 STR."
+                },
+                {
+                  "name": "Ghostly",
+                  "description": "This model can advance through terrain and obstacles without penalty and can advance through obstructions if it has enough movement to move completely past them. It cannot be targeted by free strikes."
+                },
+                {
+                  "name": "Henchmen [Small-based Bane]",
+                  "description": "Choose one friendly small-based Bane unit at the beginning of the game to be Henchmen. The chosen unit gains +2 DEF and MAT and Apparition."
+                },
+                {
+                  "name": "Irregulars [Bane Knights]",
+                  "description": "Bane Knights can be included in any army that also contains this model."
+                },
+                {
+                  "name": "Soultaker: Cull Soul",
+                  "description": "This model can gain soul tokens. When a living enemy model is destroyed within 2\\\" of this model, this model gains the destroyed model's soul token. After this model replenishes its focus during your next Control Phase, replace each soul token with 1 focus point."
+                }
+              ],
+              "focus": "7",
+              "stats": {
+                "spd": "6",
+                "str": "6",
+                "mat": "7",
+                "rat": "4",
+                "def": "15",
+                "arm": "15",
+                "cmd": "9",
+                "hp": "16"
+              },
+              "weapons": [
+                {
+                  "name": "Death Kiss",
+                  "type": "m",
+                  "rng": "2",
+                  "pow": "6",
+                  "damagetype": [
+                    "Magical"
+                  ]
+                }
+              ],
+              "feat": {
+                "name": "Shadowfall",
+                "description": "Friendly Faction models/units currently in Agathia's control range are affected by Ghost Walk. While in Agathia's control range, friendly Faction models gain Stealth. Additionally, when a model in Agathia's battlegroup ends its activation in her control range, you can immediately place that model anywhere completely within 3\" of its location. Shadowfall lasts for one round."
+              },
+              "spells": [
+                {
+                  "name": "Ghost Walk",
+                  "cost": "2",
+                  "rng": "6",
+                  "dur": "TURN",
+                  "off": false,
+                  "description": "Target friendly Faction model/unit gains Ghostly for one turn. (A model with Ghostly can advance through terrain and obstacles without penalty and can advance through obstructions if it has enough movement to move completely past them. It cannot be targeted by free strikes.)"
+                },
+                {
+                  "name": "Hellfire",
+                  "cost": "3",
+                  "rng": "10",
+                  "pow": "14",
+                  "off": true,
+                  "description": "Models disabled by Hellfire cannot make a Tough roll. Models boxed by Hellfire are removed form play."
+                },
+                {
+                  "name": "Hellwrought",
+                  "cost": "2",
+                  "rng": "6",
+                  "dur": "UP",
+                  "off": false,
+                  "description": "Target warjack in the spellcaster's battlegroup gains +2 ARM and Retaliation. (If a model with Retaliation was damaged by an enemy attack during the last round, during your Maintenance Phase it can advance up to 3\" and make one basic melee attack.)"
+                },
+                {
+                  "name": "Parasite",
+                  "cost": "3",
+                  "rng": "8",
+                  "dur": "UP",
+                  "off": true,
+                  "description": "Target model/unit suffers -3 ARM and the spellcaster gains +1 ARM."
+                },
+                {
+                  "name": "Vanish",
+                  "cost": "1",
+                  "rng": "SELF",
+                  "off": false,
+                  "description": "Place the spellcaster anywhere completely within 3\" of its current location. Vanish can be cast only once per activation."
+                }
+              ]
+            },
+            {
+              "name": "Captain Aiakos",
+              "title": "Cryx Warcaster",
+              "abilities": [
+                "Tough"
+              ],
+              "characterabilities": [
+                {
+                  "name": "Leap",
+                  "description": "After it makes a full advance during its Normal Movement but not during its combat action, you can place this model anywhere completely withing 5\" of its current location this activation."
+                }
+              ],
+              "focus": "6",
+              "stats": {
+                "spd": "6",
+                "str": "6",
+                "mat": "7",
+                "rat": "5",
+                "def": "15",
+                "arm": "15",
+                "cmd": "9",
+                "hp": "17"
+              },
+              "weapons": [
+                {
+                  "name": "Harpoon",
+                  "type": "r",
+                  "rng": "10",
+                  "rof": "1",
+                  "pow": "12",
+                  "damagetype": [
+                    "Magical"
+                  ],
+                  "ability": [
+                    {
+                      "name": "Aim for the Shoulder",
+                      "description": "You can choose for this weapon to cause no damage."
+                    },
+                    {
+                      "name": "Drag",
+                      "description": "When this attack hits an enemy model with an equal or smaller base, immediately after the attack is resolved the enemy model can be pushed directly toward this model until it contacts a model, an obstacle, or an obstruction. After the enemy model is moved, this model can make one basic melee attack against the enemy model. After resolving this melee attack, this model can make additional melee attacks during its Combat Action."
+                    }
+                  ]
+                },
+                {
+                  "name": "Reaver",
+                  "type": "m",
+                  "rng": "1",
+                  "pow": "7",
+                  "damagetype": [
+                    "Magical"
+                  ],
+                  "ability": [
+                    {
+                      "name": "Blood Boon",
+                      "description": "Once per activation, immediately after resolving an attack in which it destroyed an enemy model with this weapon, this model can cast a spell with COST 3 or less without spending focus points."
+                    },
+                    {
+                      "name": "Grievous Wounds",
+                      "description": "A model hit by this weapon loses Tough and cannot have damage removed from it for one round."
+                    }
+                  ]
+                }
+              ],
+              "feat": {
+                "name": "Boarding Action",
+                "description": "Models in Aiakos' battlegroup that are currently in his control range gain +3 SPD and Assualt. Boarding Action lasts for one turn."
+              },
+              "spells": [
+                {
+                  "name": "Assail",
+                  "cost": "2",
+                  "rng": "6",
+                  "dur": "UP",
+                  "off": false,
+                  "description": "Target friendly Faction warjack can charge or make slam or trample power attacks without spending focus. The warjack gains +2\" movement when it charges or makes a slam or trample power attack. Models slammed by the warjack are moved +2\"."
+                },
+                {
+                  "name": "Carnage",
+                  "cost": "2",
+                  "rng": "SELF",
+                  "aoe": "CTRL",
+                  "dur": "TURN",
+                  "off": false,
+                  "description": "Friendly Faction models gain +2 to melee attack rolls against enemy models in the spellcaster's control range. Carnage lasts for one turn."
+                },
+                {
+                  "name": "Scything Touch",
+                  "cost": "2",
+                  "rng": "6",
+                  "dur": "UP",
+                  "off": false,
+                  "description": "Target friendly Faction model gains Dark Shroud."
+                },
+                {
+                  "name": "Stranglehold",
+                  "cost": "2",
+                  "rng": "10",
+                  "pow": "11",
+                  "dur": "*",
+                  "off": true,
+                  "description": "A model damaged by Stranglehold forfeits either its Normal Movement or its Combat Action during its next activation, as its controller chooses."
+                },
+                {
+                  "name": "White Squall",
+                  "cost": "3",
+                  "rng": "8",
+                  "pow": "12",
+                  "dur": "-",
+                  "off": true,
+                  "description": "Instead of suffering a normal damage roll, a non-incorporeal model hit by White Squall is thrown d6\" directly away from the spell's point of origin and suffers a POW 12 damage roll. The model thrown does not deviate. Collateral damage from this throw is POW 12."
+                }
+              ]
+            },
+            {
+              "name": "Iron Lich Asphyxious",
+              "title": "Cryx Warcaster",
+              "abilities": [
+                "Undead"
+              ],
+              "characterabilities": [
+                {
+                  "name": "Soultaker: Cull Soul",
+                  "description": "This model can gain soul tokens. When a living enemy model is destroyed within 2\\\" of this model, this model gains the destroyed model's soul token. After this model replenishes its focus during your next Control Phase, replace each soul token with 1 focus point."
+                }
+              ],
+              "focus": "7",
+              "stats": {
+                "spd": "5",
+                "str": "7",
+                "mat": "6",
+                "rat": "4",
+                "def": "15",
+                "arm": "16",
+                "cmd": "7",
+                "hp": "18"
+              },
+              "weapons": [
+                {
+                  "name": "Soulsplitter",
+                  "type": "m",
+                  "rng": "2",
+                  "pow": "8",
+                  "damagetype": [
+                    "Magical"
+                  ],
+                  "ability": [
+                    {
+                      "name": "Sustained Attack",
+                      "description": "During this model's activation, when it makes an attack with this weapon against the last model hit by the weapon this activation, the attack automatically hits."
+                    }
+                  ]
+                }
+              ],
+              "feat": {
+                "name": "Consuming Blight",
+                "description": "Enemy models currently in Asphyxious' control range suffer an unboostable POW 7 damage roll. Consuming Blight damage rolls are simultaneous. Asphyxious then gains up to 7 focus points. He cannot have more focus points than his current FOCUS as a result of Consuming Blight."
+              },
+              "spells": [
+                {
+                  "name": "Breath of Corruption",
+                  "cost": "3",
+                  "rng": "8",
+                  "aoe": "3",
+                  "pow": "12",
+                  "dur": "RND",
+                  "off": true,
+                  "description": "Models hit suffer a POW 12 corrosion damage roll. The AOE is a cloud and a hazard which stays in play for one round, and does 1 point of corrosion damage to models entering or ending their activations in it."
+                },
+                {
+                  "name": "Hellfire",
+                  "cost": "3",
+                  "rng": "10",
+                  "pow": "14",
+                  "off": true,
+                  "description": "Models disabled by Hellfire cannot make a Tough roll. Models boxed by Hellfire are removed from play."
+                },
+                {
+                  "name": "Parasite",
+                  "cost": "3",
+                  "rng": "8",
+                  "dur": "UP",
+                  "off": true,
+                  "description": "Target model/unit suffers -3 ARM and the spellcaster gains +1 ARM."
+                },
+                {
+                  "name": "Scything Touch",
+                  "cost": "2",
+                  "rng": "6",
+                  "dur": "UP",
+                  "off": false,
+                  "description": "Target friendly Faction model gains Dark Shroud."
+                },
+                {
+                  "name": "Spectral Leech",
+                  "cost": "2",
+                  "rng": "10",
+                  "off": true,
+                  "description": "Remove d3 focus or fury points from the target model hit by Spectral Leech."
+                },
+                {
+                  "name": "Teleport",
+                  "cost": "2",
+                  "rng": "SELF",
+                  "off": false,
+                  "description": "Place the spellcaster anywhere completely within 6\" of its current location, then its activation ends."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

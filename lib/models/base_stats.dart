@@ -1,14 +1,12 @@
 class BaseStats {
-  int spd;
-  int str;
-  int mat;
-  int rat;
-  int def;
-  int arm;
-  int focus;
-  int fury;
-  int threshold;
-  int health;
+  String spd;
+  String str;
+  String mat;
+  String rat;
+  String def;
+  String arm;
+  String cmd;
+  String hp;
 
   BaseStats({
     required this.spd,
@@ -17,9 +15,20 @@ class BaseStats {
     required this.rat,
     required this.def,
     required this.arm,
-    required this.focus,
-    required this.fury,
-    required this.threshold,
-    required this.health,
+    required this.cmd,
+    required this.hp,
   });
+
+  factory BaseStats.fromJson(Map<String, dynamic> json) {
+    return BaseStats(
+      spd: json['spd'],
+      str: json['str'],
+      mat: json['mat'],
+      rat: json['rat'],
+      def: json['def'],
+      arm: json['arm'],
+      cmd: json['cmd'],
+      hp: json['hp'],
+    );
+  }
 }

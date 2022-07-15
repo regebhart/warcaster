@@ -1,10 +1,10 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:warcaster/widgets/model_container.dart';
+import 'package:provider/provider.dart';
+import 'package:warcaster/widgets/game/game_list.dart';
+
+import 'providers/game_provider.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -14,12 +14,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'War Caster',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => GameProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'War Caster',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const MyHomePage(),
       ),
-      home: const MyHomePage(),
     );
   }
 }
@@ -37,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return const SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: ModelContainer(),
+        body: GameList(),
       ),
     );
   }
