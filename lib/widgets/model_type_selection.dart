@@ -53,31 +53,37 @@ class ModelTypeList extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 5.0),
       children: [
         GameListTile(
+            addButton: false,
             title: "Warcasters",
             onTap: () {
               ontap("warcaster");
             }),
         GameListTile(
+          addButton: false,
             title: "Warjacks",
             onTap: () {
               ontap("warjack");
             }),
         GameListTile(
+          addButton: false,
             title: "Battle engine / Structures",
             onTap: () {
               ontap("battle engine");
             }),
         GameListTile(
+          addButton: false,
             title: "Solos",
             onTap: () {
               ontap("solos");
             }),
         GameListTile(
+          addButton: false,
             title: "Units",
             onTap: () {
               ontap("units");
             }),
         GameListTile(
+          addButton: false,
             title: "Attachments",
             onTap: () {
               ontap("attachments");

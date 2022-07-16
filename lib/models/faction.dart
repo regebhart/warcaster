@@ -2,7 +2,7 @@ import 'warcaster.dart';
 
 class Faction {
   String name;
-  List<Warcaster> warcasters;
+  List<Warcaster>? warcasters;
   // List? warjacks;
   // List? battleengines;
   // List? structures;
@@ -12,7 +12,7 @@ class Faction {
 
   Faction({
     required this.name,
-    required this.warcasters,
+    this.warcasters,
     // this.warjacks,
     // this.battleengines,
     // this.structures,

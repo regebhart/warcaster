@@ -30,7 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^6.0.3
-  shared_preferences: ^2.0.1
+  shared_preferences: ^2.0.15
   flutter_expanded_tile: ^0.3.6
   akar_icons_flutter: ^1.1.11
   iconify_flutter: ^0.0.4

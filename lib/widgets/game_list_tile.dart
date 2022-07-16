@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class GameListTile extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
-  const GameListTile({Key? key, required this.title, required this.onTap}) : super(key: key);
+  final bool addButton;
+  Widget? addButtonWidget;
+
+  GameListTile({Key? key, required this.title, required this.onTap, required this.addButton, this.addButtonWidget}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +15,7 @@ class GameListTile extends StatelessWidget {
       child: ListTile(
         dense: true,
         tileColor: Colors.black,
+        leading: addButton ? addButtonWidget : null,
         trailing: const Icon(
           Icons.chevron_right,
           color: Colors.white,

@@ -30,6 +30,7 @@ class _FactionListState extends State<FactionList> {
         padding: const EdgeInsets.symmetric(horizontal: 5.0),
         itemBuilder: (context, i) {
           return GameListTile(
+            addButton: false,
             title: gameProvider.game.factions[i].name,
             onTap: () {
               ontap(gameProvider.game.factions[i]);

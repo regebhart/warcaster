@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
 import 'package:warcaster/widgets/game_list_tile.dart';
 
@@ -27,6 +25,7 @@ class GameList extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 5.0),
         itemBuilder: (context, i) {
           return GameListTile(
+            addButton: false,
             title: gameProvider.fullGameData.gameList[i].name,
             onTap: () {
               ontap(gameProvider.fullGameData.gameList[i]);
