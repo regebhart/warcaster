@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:warcaster/widgets/game/game_list.dart';
+import 'package:warcaster/widgets/game_page_view.dart';
 
 import 'providers/game_provider.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
@@ -21,9 +23,13 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'War Caster',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          textTheme: Theme.of(context).textTheme.apply(
+                bodyColor: Colors.white,
+                displayColor: Colors.white,
+              ),
         ),
         home: const MyHomePage(),
       ),
@@ -43,8 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
-        body: GameList(),
+        backgroundColor: Color.fromARGB(255, 117, 117, 117),
+        body: GamePageView(),
       ),
     );
   }

@@ -1,67 +1,88 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:warcaster/widgets/game_list_tile.dart';
 import 'package:warcaster/widgets/warcaster/warcaster_list.dart';
 
 import '../models/faction.dart';
+import '../providers/game_provider.dart';
 
 class ModelTypeList extends StatelessWidget {
-  final Faction faction;
-  const ModelTypeList({Key? key, required this.faction}) : super(key: key);
+  // final Faction faction;
+  const ModelTypeList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final gameProvider = Provider.of<GameProvider>(context, listen: false);
+
     void ontap(String title) {
-      late Widget navTo;
+      late int navTo;
 
       switch (title) {
         case "warcaster":
-          navTo = WarcasterList(faction: faction);
+          navTo = 3;
           break;
         case "warjack":
-          // navTo = WarcasterList(faction: faction);
-          break;
+        // navTo = WarcasterList(faction: faction);
+        // break;
         case "warbeast":
-          // navTo = WarcasterList(faction: faction);
-          break;
+        // navTo = WarcasterList(faction: faction);
+        // break;
         case "battle engine":
-          // navTo = WarcasterList(faction: faction);
-          break;
+        // navTo = WarcasterList(faction: faction);
+        // break;
         case "gargantuan":
-          // navTo = WarcasterList(faction: faction);
-          break;
+        // navTo = WarcasterList(faction: faction);
+        // break;
         case "solos":
-          // navTo = WarcasterList(faction: faction);
-          break;
+        // navTo = WarcasterList(faction: faction);
+        // break;
         case "units":
-          // navTo = WarcasterList(faction: faction);
-          break;
+        // navTo = WarcasterList(faction: faction);
+        // break;
         case "attachments":
-          // navTo = WarcasterList(faction: faction);
-          break;
+        // navTo = WarcasterList(faction: faction);
+        // break;
         default:
-          navTo = const SizedBox();
+          navTo = 3;
       }
 
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (BuildContext context) => navTo,
-        ),
-      );
+      gameProvider.pageController.animateToPage(navTo, duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
     }
 
-    return SafeArea(
-      child: Scaffold(
-        body: ListView(
-          children: [
-            ListTile(onTap: () => ontap('warcaster'), title: const Text("Warcasters")),
-            ListTile(onTap: () => ontap('warjack'), title: const Text("Warjacks")),
-            ListTile(onTap: () => ontap('battle engine'), title: const Text("Battle Engines / Structures")),
-            ListTile(onTap: () => ontap('solos'), title: const Text("Solos")),
-            ListTile(onTap: () => ontap('units'), title: const Text("Units")),
-            ListTile(onTap: () => ontap('attachments'), title: const Text("Attachments")),
-          ],
-        ),
-      ),
+    return ListView(
+      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+      children: [
+        GameListTile(
+            title: "Warcasters",
+            onTap: () {
+              ontap("warcaster");
+            }),
+        GameListTile(
+            title: "Warjacks",
+            onTap: () {
+              ontap("warjack");
+            }),
+        GameListTile(
+            title: "Battle engine / Structures",
+            onTap: () {
+              ontap("battle engine");
+            }),
+        GameListTile(
+            title: "Solos",
+            onTap: () {
+              ontap("solos");
+            }),
+        GameListTile(
+            title: "Units",
+            onTap: () {
+              ontap("units");
+            }),
+        GameListTile(
+            title: "Attachments",
+            onTap: () {
+              ontap("attachments");
+            }),
+      ],
     );
   }
 }

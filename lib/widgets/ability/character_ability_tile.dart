@@ -12,14 +12,14 @@ class CharacterAbilityTile extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(5),
         child: Container(
-          color: Colors.white30,
+          color: Colors.grey[700],
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
             child: RichText(
               text: TextSpan(
                 style: const TextStyle(
                   fontSize: 12,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
                 children: <TextSpan>[
                   TextSpan(

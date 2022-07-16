@@ -99,7 +99,7 @@ class _WeaponTileState extends State<WeaponTile> {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(5),
         child: Container(
-          color: Colors.white30,
+          color: Colors.grey[700],
           child: Padding(
             padding: const EdgeInsets.only(left: 8.0, bottom: 3.0, right: 5.0),
             child: Column(

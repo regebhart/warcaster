@@ -14,7 +14,7 @@ class FeatTile extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(5),
           child: Container(
-            color: Colors.white24,
+            color: Colors.grey[700],
             child: Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 5.0,

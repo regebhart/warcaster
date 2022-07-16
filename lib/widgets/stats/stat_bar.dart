@@ -30,7 +30,7 @@ class _StatBarState extends State<StatBar> {
             child: Table(
               border: TableBorder.all(
                 width: 1,
-                color: Colors.black,
+                color: Colors.white,
               ),
               children: [
                 const TableRow(

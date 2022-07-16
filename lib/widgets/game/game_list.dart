@@ -1,40 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
-import 'package:warcaster/models/gamedata.dart';
+import 'package:warcaster/widgets/game_list_tile.dart';
 
+import '../../models/game.dart';
 import '../../providers/game_provider.dart';
-import 'game_tile.dart';
 
-class GameList extends StatefulWidget {
+class GameList extends StatelessWidget {
   const GameList({Key? key}) : super(key: key);
 
   @override
-  State<GameList> createState() => _GameListState();
-}
-
-class _GameListState extends State<GameList> {
-  @override
   Widget build(BuildContext context) {
-    GameData gamedata;
-    final factionProvider = Provider.of<GameProvider>(context, listen: true);
+    final gameProvider = Provider.of<GameProvider>(context, listen: true);
 
-    return FutureBuilder(
-        future: factionProvider.readFullGameData(),
-        builder: (BuildContext context, AsyncSnapshot snap) {
-          if (snap.hasData == false) {
-            return const Text("No data");
-          } else {
-            gamedata = snap.data;
-            return ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.vertical,
-                // physics: const ClampingScrollPhysics(),
-                itemCount: gamedata.gameList.length,
-                padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                itemBuilder: (context, i) {
-                  return GameTile(game: gamedata.gameList[i]);
-                });
-          }
+    void ontap(Game game) {
+      gameProvider.setGame(game);
+      gameProvider.pageController.animateToPage(1, duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
+    }
+
+    return ListView.builder(
+        shrinkWrap: true,
+        scrollDirection: Axis.vertical,
+        // physics: const ClampingScrollPhysics(),
+        itemCount: gameProvider.fullGameData.gameList.length,
+        padding: const EdgeInsets.symmetric(horizontal: 5.0),
+        itemBuilder: (context, i) {
+          return GameListTile(
+            title: gameProvider.fullGameData.gameList[i].name,
+            onTap: () {
+              ontap(gameProvider.fullGameData.gameList[i]);
+            },
+          );
+          // return GameTile(game: gameProvider.fullGameData.gameList[i]);
         });
   }
 }

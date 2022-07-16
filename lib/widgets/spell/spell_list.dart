@@ -43,6 +43,7 @@ class SpellList extends StatelessWidget {
                         style: TextStyle(
                           fontSize: MediaQuery.of(context).size.height * 0.015,
                           color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -61,7 +62,7 @@ class SpellList extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(5),
           child: Container(
-            color: Colors.white24,
+            color: Colors.grey[700],
             child: ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,

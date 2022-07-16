@@ -20,6 +20,7 @@ class StatTitle extends StatelessWidget {
           style: TextStyle(
             fontSize: MediaQuery.of(context).size.height * 0.015,
             color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

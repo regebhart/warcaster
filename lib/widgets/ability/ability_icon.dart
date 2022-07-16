@@ -25,7 +25,7 @@ class AbilityIcon extends StatelessWidget {
     }
 
     return CircleAvatar(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       radius: MediaQuery.of(context).size.height * 0.015,
       child: CircleAvatar(
         backgroundColor: Colors.black,

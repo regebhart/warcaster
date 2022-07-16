@@ -16,7 +16,7 @@ class StatValue extends StatelessWidget {
         textAlign: TextAlign.center,
         maxLines: 1,
         style: TextStyle(
-          color: Colors.black,
+          color: Colors.white,
           fontSize: MediaQuery.of(context).size.height * 0.0165,
         ),
       ),

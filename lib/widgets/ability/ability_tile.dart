@@ -18,6 +18,7 @@ class AbilityTile extends StatelessWidget {
         Text(
           ability.description,
           style: const TextStyle(
+            color: Colors.white,
             fontSize: 12,
           ),
         ),

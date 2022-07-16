@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:warcaster/models/warcaster.dart';
+import 'package:warcaster/providers/game_provider.dart';
 import 'package:warcaster/widgets/warcaster/feat_tile.dart';
 import 'package:warcaster/widgets/spell/spell_list.dart';
 
@@ -9,8 +11,11 @@ import '../stats/stat_bar.dart';
 import '../weapon/weapon_list.dart';
 
 class WarcasterCard extends StatefulWidget {
-  final Warcaster warcaster;
-  const WarcasterCard({Key? key, required this.warcaster}) : super(key: key);
+  // final Warcaster warcaster;
+  const WarcasterCard({
+    Key? key,
+    // required this.warcaster,
+  }) : super(key: key);
 
   @override
   State<WarcasterCard> createState() => _WarcasterCardState();
@@ -19,7 +24,8 @@ class WarcasterCard extends StatefulWidget {
 class _WarcasterCardState extends State<WarcasterCard> {
   @override
   Widget build(BuildContext context) {
-    final Warcaster warcaster = widget.warcaster;
+    final gameProvider = Provider.of<GameProvider>(context, listen: false);
+    final Warcaster warcaster = gameProvider.warcaster;
 
     List<Widget> abilityList = [];
 
@@ -29,64 +35,59 @@ class _WarcasterCardState extends State<WarcasterCard> {
       });
     }
 
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Padding(
-          padding: const EdgeInsets.all(3.0),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(5),
-            child: Container(
-              color: Colors.green,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Padding(
+      padding: const EdgeInsets.all(3.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(5),
+        child: Container(
+          color: Colors.black,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                warcaster.name,
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                warcaster.title,
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ],
-                          ),
-                          if (warcaster.abilities!.isNotEmpty)
-                            Padding(
-                              padding: const EdgeInsets.only(right: 60.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: abilityList,
-                              ),
+                          Text(
+                            warcaster.name,
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
                             ),
+                          ),
+                          Text(
+                            warcaster.title,
+                            style: const TextStyle(
+                              fontSize: 12,
+                            ),
+                          ),
                         ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 3.0),
-                        child: StatBar(focus: warcaster.focus, stats: warcaster.stats),
-                      ),
-                      CharacterAbilityList(warcaster: warcaster),
-                      FeatTile(warcaster: warcaster),
-                      WeaponList(warcaster: warcaster),
-                      SpellList(warcaster: warcaster),
+                      if (warcaster.abilities!.isNotEmpty)
+                        Padding(
+                          padding: const EdgeInsets.only(right: 60.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: abilityList,
+                          ),
+                        ),
                     ],
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 3.0),
+                    child: StatBar(focus: warcaster.focus, stats: warcaster.stats),
+                  ),
+                  CharacterAbilityList(warcaster: warcaster),
+                  FeatTile(warcaster: warcaster),
+                  WeaponList(warcaster: warcaster),
+                  SpellList(warcaster: warcaster),
+                ],
               ),
             ),
           ),

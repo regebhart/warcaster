@@ -32,7 +32,7 @@ class Warcaster {
     List<String> abilities = [];
     if (json.containsKey('abilities')) {
       for (var a in json['abilities']) {
-        print(a);
+        // print(a);
         String ability = a;
         abilities.add(ability);
       }

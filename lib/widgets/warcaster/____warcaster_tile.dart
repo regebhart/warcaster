@@ -17,16 +17,16 @@ class WarcasterTile extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: ListTile(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (BuildContext context) => WarcasterCard(
-                  warcaster: warcaster,
-                ),
-              ),
-            );
-          },
+          // onTap: () {
+          //   Navigator.push(
+          //     context,
+          //     MaterialPageRoute(
+          //       builder: (BuildContext context) => WarcasterCard(
+          //         warcaster: warcaster,
+          //       ),
+          //     ),
+          //   );
+          // },
           tileColor: Colors.green,
           dense: true,
           trailing: const Icon(Icons.expand_more_outlined),
